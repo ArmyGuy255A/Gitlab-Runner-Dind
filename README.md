@@ -20,12 +20,12 @@
 The minimum required environment to run and register this runner is below:
 
 ```bash
-docker run -d --name gitlab-runner \
+docker run -d --name gitlab-runner-dind \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /etc/gitlab-runner:/etc/gitlab-runner \
+  -v /etc/gitlab-runner-dind:/etc/gitlab-runner \
   -e GITLAB_URL=https://10.10.10.10:8443 \
   -e GITLAB_REGISTRATION_TOKEN=GLh.....YZ \
-  armyguy255a/gitlab-runner:latest
+  armyguy255a/gitlab-runner-dind:latest
 ```
 
 You may need a .env file to store the environment variables when running docker compose. The file would look like this:
