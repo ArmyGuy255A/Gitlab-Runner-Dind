@@ -1,18 +1,6 @@
 
 # Environment Variables
 
-DATA_DIR="/etc/gitlab-runner"
-CONFIG_FILE=${CONFIG_FILE:-$DATA_DIR/config.toml}
-CA_CERTIFICATES_PATH=${CA_CERTIFICATES_PATH:-$DATA_DIR/certs/ca.crt}
-LOCAL_CA_PATH="/usr/local/share/ca-certificates/ca.crt"
-GITLAB_URL=$GITLAB_URL
-GITLAB_REGISTRATION_TOKEN=$GITLAB_REGISTRATION_TOKEN
-DEFAULT_IMAGE=${DEFAULT_IMAGE:-"gitlab/gitlab-runner-helper:ubuntu-x86_64-v14.10.2-pwsh"}
-TAG_LIST=${TAG_LIST:-"docker,gitlab,dind"}
-SSH_PORT=${SSH_PORT:-"8443"}
-EXECUTOR= shell, ssh, parallels, docker-windows, instance, custom, virtualbox, docker, docker+machine, kubernetes, docker-autoscaler
-
-
 | Variable | Description | Default/Example | Allowed Values |
 |----------|-------------|---------|---------|
 | DATA_DIR | Directory where the GitLab Runner configuration is stored | /etc/gitlab-runner ||
@@ -50,8 +38,8 @@ REGISTRATION_TOKEN=GLh.....YZ
 
 This runner's docker compose file is designed specifically for the Hackathon project. A local GitLab instance is required to be running on the host machine. This runner will be able to dynamically register itself with the GitLab instance. There is a convenience Makefile that allows you to experiment and iterate quickly on different versions of the runner. The common make commands are listed below.
 
-make up - Start the GitLab Runner \
-make down - Destroy the GitLab Runner \
-make stop - Stop the GitLab Runner \
-make start - Start the GitLab Runner \
-make purge - Destroy/Delete the GitLab Runner and all associated data 
+`make up` - Start the GitLab Runner \
+`make down` - Destroy the GitLab Runner \
+`make stop` - Stop the GitLab Runner \
+`make start` - Start the GitLab Runner \
+`make purge` - Destroy/Delete the GitLab Runner and all associated data 
